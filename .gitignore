@@ -1,0 +1,4 @@
+.env
+classroom/
+node_modules/
+**/.DS_STORE
