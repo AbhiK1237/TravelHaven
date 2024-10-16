@@ -40,7 +40,7 @@ const store = MongoStore.create({
     touchAfter: 24 * 3600
 })
 
-store.on("error",()=>{
+store.on("error",(err)=>{
     console.log("error in mongo session store",err);
 })
 const sessionOptions = {
@@ -69,7 +69,6 @@ async function main() {
 
 app.use(session(sessionOptions));
 app.use(flash());
-
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -90,7 +89,7 @@ app.use((req,res,next)=>{
 //     let newUser = await User.register(fakeUser,"abhiK");
 //     res.send(newUser);
 // })
-
+app.use("/",listingRouter);
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
@@ -109,16 +108,3 @@ app.listen(8080,()=>{
 })
 
 
-
-// app.get("/testListing",(req,res)=>{
-//     let sample = new Listing({
-//         title : "my new villa",
-//         description : "located amidst mountains",
-//         price:2300,
-//         location:"Haldvani,Uttarakhand",
-//         country:"India"
-//     })
-//     sample.save();
-//     console.log("sample was saved");
-//     res.send("new home listed");
-// })

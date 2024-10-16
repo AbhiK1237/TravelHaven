@@ -8,6 +8,8 @@ const multer  = require('multer');
 const {storage} = require("../cloudConfig.js");
 const upload = multer({storage})
 
+
+
 //Index.route and create route
 router.route("/")
     .get(asyncWrap(listingController.index))
@@ -15,18 +17,18 @@ router.route("/")
   
 
 //create route
-router.get("/new",isLoggedIn,listingController.renderNewForm);
+router.get("/listings/new",isLoggedIn,listingController.renderNewForm);
 
 
 //show,update,delete route
-router.route("/:id")
+router.route("/listings/:id")
 .get(isLoggedIn,asyncWrap(listingController.showListing))
 .put(isLoggedIn,isOwner,upload.single('listing[image]'),validateListing,asyncWrap(listingController.updateListing))
 .delete(isLoggedIn,isOwner,asyncWrap(listingController.destroyListing));
 
 
 //edit route
-router.get("/:id/edit",isLoggedIn,isOwner,asyncWrap(listingController.renderEditForm));
+router.get("/listings/:id/edit",isLoggedIn,isOwner,asyncWrap(listingController.renderEditForm));
 
 
 module.exports = router;
