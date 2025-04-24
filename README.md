@@ -4,12 +4,11 @@
 [![Node.js](https://img.shields.io/badge/Node.js-v16%2B-green)](https://nodejs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Latest-brightgreen)](https://www.mongodb.com/)
 
-**TravelHaven** is a comprehensive web application designed to help travelers plan, organize, and share their adventures. Discover new destinations, create personalized itineraries, and connect with a community of fellow travel enthusiasts.
+TravelHaven is a web-based application that allows users to book accommodations and list their own properties for rent. It provides a simple and efficient platform for managing stays, connecting travelers with hosts, and facilitating short-term rentals.
 
 ## ✨ Features
 
 - **🌍 Destination Discovery** - Explore curated destinations with rich details and local insights
-- **📅 Itinerary Builder** - Create day-by-day travel plans with activities, accommodations, and transportation
 - **⭐ Reviews & Ratings** - Share your experiences and learn from fellow travelers
 - **🔖 Bookmarking** - Save your favorite destinations for future adventures
 - **📱 Responsive Design** - Seamless experience across desktop, tablet, and mobile devices
